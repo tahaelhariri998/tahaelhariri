@@ -710,101 +710,114 @@ const TahaPortfolio = () => {
                 </header>
 
                 {/* Main Content */}
-                <main className="flex-grow container mx-auto px-4 pt-64 pb-12">
+                <main className="flex-grow container mx-auto px-4 pt-48 lg:pt-32  pb-12">
                     {/* Home Section */}
                     {activeSection === 'home' && (
-                        <section className="mb-12">
-                            {/* Profile */}
-                            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-                                <div className="w-48 h-48 rounded-lg overflow-hidden shadow-lg bg-gray-200">
-                                    <img src="./main.jpg" alt={t.taha_alhariri} className="w-full h-full object-cover" />
-                                </div>
-
-                                <div className="flex-1 text-center md:text-right">
-                                    <h1 className="text-3xl font-bold text-blue-800 mb-2">{t.taha_alhariri}</h1>
-                                    <div className="text-lg text-blue-600 mb-4">{t.software_engineer}</div>
-                                    <p className="mb-6 text-gray-700">
-                                        {t.profile_description}
-                                    </p>
-
-                                    <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                                        <a href="mailto:tahaalhriri@gmail.com" className="flex items-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-all hover:-translate-y-1">
-                                            <span className="ml-2">✉️</span>
-                                            tahaalhriri@gmail.com
-                                        </a>
-                                        <a href="tel:+905349338282" className="flex items-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-all hover:-translate-y-1">
-                                            <span className="ml-2">📱</span>
-                                            +90 (534) 933 8282
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/taha-elhariri-a5b484194/"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
-                                           className="flex items-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-all hover:-translate-y-1">
-
-                                            <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M20.45 2H3.55A1.5 1.5 0 0 0 2 3.55v16.9A1.5 1.5 0 0 0 3.55 22h16.9A1.5 1.5 0 0 0 22 20.45V3.55A1.5 1.5 0 0 0 20.45 2zM8.12 18.17H5.38V9h2.74v9.17zM6.75 7.78a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zM18.17 18.17h-2.74v-4.47c0-1.07-.02-2.44-1.48-2.44-1.48 0-1.7 1.16-1.7 2.36v4.55h-2.74V9h2.63v1.25h.04c.37-.7 1.27-1.44 2.61-1.44 2.79 0 3.3 1.84 3.3 4.24v5.12z"/>
-                                            </svg>
-
-                                            <span className="ml-2"> LinkedIn </span>
-                                        </a>
-
-                                        <a href="https://github.com/tahaelhariri998" target="_blank" rel="noopener noreferrer" className="flex items-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-all hover:-translate-y-1">
-                                            <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                                                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.21.68-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.26-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.39.2 2.41.1 2.67.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12c0-5.52-4.48-10-10-10z"/>
-                                            </svg>
-                                            <span className="ml-2">GitHub</span>
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex justify-center items-center ">
-                                {/* Slider */}
-                                <div className="relative w-[70%] h-150 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-                                    {slides.map((slide, index) => (
-                                        <div
-                                            key={slide.id}
-                                            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-                                        >
-                                            <img src={`./صورة${index + 1}.jpg`} alt={slide.title} className="w-full h-full object-cover" />
-
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6 text-white">
-                                                <h2 className="text-2xl font-bold mb-2">{slide.title}</h2>
-                                                <p className="mb-4">{slide.description}</p>
-                                                <button
-                                                    onClick={() => handleSectionChange('experience')}
-                                                    className="self-start bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition-colors"
-                                                >
-                                                   {t.view_more}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                
-                            </div>
-                            <div className="space-y-6 mt-12 flex flex-col justify-center items-center">
-  <div className="relative w-[50%]  h-[50%] pb-[56.25%] overflow-hidden">
-    <video 
-      controls
-      className="absolute top-0 left-0 w-full h-full"
-    >
-      <source src="./vi.mp4" type="video/mp4" />
-      متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-  </div>
-  
-  <div className="justify-center items-center w-[50%] h-[50%] pb-[56.25%] overflow-hidden">
-    <Imagesslider/>
-  </div>
-</div>
-
-  
- 
-
-
-
-                        </section>
+       <section className="container mx-auto px-4 sm:px-6 py-8 mb-12">
+       {/* Profile Section - Improved for responsiveness */}
+       <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 mb-8 md:mb-12">
+           {/* Profile Image - More responsive sizing */}
+           <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg overflow-hidden shadow-lg bg-gray-200 flex-shrink-0">
+               <img src="./main.jpg" alt={t.taha_alhariri} className="w-full h-full object-cover" />
+           </div>
+   
+           {/* Profile Info - Improved text alignment */}
+           <div className="flex-1 text-center md:text-right">
+               <h1 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-2">{t.taha_alhariri}</h1>
+               <div className="text-base sm:text-lg text-blue-600 mb-3 md:mb-4">{t.software_engineer}</div>
+               <p className="mb-4 md:mb-6 text-sm sm:text-base text-gray-700 max-w-3xl mx-auto md:mx-0">
+                   {t.profile_description}
+               </p>
+   
+               {/* Contact Buttons - Better wrapping for small screens */}
+               <div className="flex flex-wrap justify-center md:justify-end gap-2 sm:gap-3">
+                   <a href="mailto:tahaalhriri@gmail.com" 
+                      className="flex items-center text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white py-1 sm:py-2 px-3 sm:px-4 rounded transition-all hover:-translate-y-1">
+                       <span className="mr-1 sm:mr-2">✉️</span>
+                       <span className="hidden sm:inline">tahaalhriri@gmail.com</span>
+                       <span className="inline sm:hidden">ايميل</span>
+                   </a>
+                   <a href="tel:+905349338282" 
+                      className="flex items-center text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white py-1 sm:py-2 px-3 sm:px-4 rounded transition-all hover:-translate-y-1">
+                       <span className="mr-1 sm:mr-2">📱</span>
+                       <span className="hidden sm:inline">+90 (534) 933 8282</span>
+                       <span className="inline sm:hidden">هاتف</span>
+                   </a>
+                   <a href="https://www.linkedin.com/in/taha-elhariri-a5b484194/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white py-1 sm:py-2 px-3 sm:px-4 rounded transition-all hover:-translate-y-1">
+                       <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                           <path d="M20.45 2H3.55A1.5 1.5 0 0 0 2 3.55v16.9A1.5 1.5 0 0 0 3.55 22h16.9A1.5 1.5 0 0 0 22 20.45V3.55A1.5 1.5 0 0 0 20.45 2zM8.12 18.17H5.38V9h2.74v9.17zM6.75 7.78a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2zM18.17 18.17h-2.74v-4.47c0-1.07-.02-2.44-1.48-2.44-1.48 0-1.7 1.16-1.7 2.36v4.55h-2.74V9h2.63v1.25h.04c.37-.7 1.27-1.44 2.61-1.44 2.79 0 3.3 1.84 3.3 4.24v5.12z"/>
+                       </svg>
+                       <span className="ml-1 sm:ml-2">LinkedIn</span>
+                   </a>
+   
+                   <a href="https://github.com/tahaelhariri998" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white py-1 sm:py-2 px-3 sm:px-4 rounded transition-all hover:-translate-y-1">
+                       <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
+                           <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.21.68-.48 0-.24-.01-.87-.01-1.7-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.26-.45-1.28.1-2.67 0 0 .84-.27 2.75 1.02a9.55 9.55 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.39.2 2.41.1 2.67.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86 0 1.34-.01 2.42-.01 2.75 0 .27.18.58.69.48A10.02 10.02 0 0 0 22 12c0-5.52-4.48-10-10-10z"/>
+                       </svg>
+                       <span className="ml-1 sm:ml-2">GitHub</span>
+                   </a>
+               </div>
+           </div>
+       </div>
+   
+       {/* Slider Section - Better aspect ratio control */}
+       <div className="flex justify-center items-center my-8">
+           <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+               {slides.map((slide, index) => (
+                   <div
+                       key={slide.id}
+                       className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+                   >
+                       <img 
+                           src={`./صورة${index + 1}.jpg`} 
+                           alt={slide.title} 
+                           className="w-full h-full object-cover" 
+                       />
+   
+                       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-3 sm:p-4 md:p-6 text-white">
+                           <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">{slide.title}</h2>
+                           <p className="text-sm sm:text-base mb-2 sm:mb-4 line-clamp-2 sm:line-clamp-3 md:line-clamp-none">{slide.description}</p>
+                           <button
+                               onClick={() => handleSectionChange('experience')}
+                               className="self-start bg-green-600 hover:bg-green-700 text-white text-sm sm:text-base py-1 sm:py-2 px-2 sm:px-4 rounded-md transition-colors"
+                           >
+                               {t.view_more}
+                           </button>
+                       </div>
+                   </div>
+               ))}
+           </div>
+       </div>
+   
+       {/* Video and Image Slider Section - Improved container handling */}
+       <div className="space-y-4 sm:space-y-6 mt-8 sm:mt-12">
+           {/* Video Container - Using aspect ratio instead of fixed heights */}
+           <div className="w-full sm:w-[90%] md:w-[80%] mx-auto">
+               <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
+                   <video 
+                       controls
+                       className="absolute top-0 left-0 w-full h-full"
+                   >
+                       <source src="./vi.mp4" type="video/mp4" />
+                       متصفحك لا يدعم تشغيل الفيديو.
+                   </video>
+               </div>
+           </div>
+           
+           {/* Image Slider - Increased height for better image display */}
+           <div className="w-full sm:w-[90%] md:w-[80%] mx-auto">
+               <div className="aspect-[20/25] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[10/14] overflow-hidden rounded-lg shadow-md">
+                   <Imagesslider   />
+               </div>
+           </div>
+       </div>
+   </section>
                     )}
 
                     {/* Experience Section */}
