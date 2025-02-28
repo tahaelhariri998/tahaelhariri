@@ -6,6 +6,7 @@ const ImageCarousel = () => {
     './image2.jpg',
     './image3.jpg',
     './image4.jpg',
+    './image5.jpg',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
