@@ -325,53 +325,7 @@ const TahaPortfolio = () => {
         setLanguage(newLanguage);
     };
 
-    // Handle tab/section navigation
-    interface Slide {
-        id: number;
-        title: string;
-        description: string;
-        linkTo: string;
-        buttonText: string;
-    }
-
-    interface Experience {
-        id: number;
-        title: string;
-        company: string;
-        location: string;
-        period: string;
-        responsibilities: string[];
-    }
-
-    interface Research {
-        id: number;
-        title: string;
-        institution: string;
-        date: string;
-        details: string[];
-    }
-
-    interface Education {
-        id: number;
-        degree: string;
-        university: string;
-        period: string;
-        description: string;
-    }
-
-    interface Skill {
-        category: string;
-        items: string[];
-    }
-
-    interface Volunteer {
-        id: number;
-        title: string;
-        organization: string;
-        period: string;
-        description: string;
-    }
-
+     
     const handleSectionChange = (section: string): void => {
 
         setActiveSection(section);
