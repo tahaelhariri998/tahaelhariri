@@ -710,7 +710,7 @@ const TahaPortfolio = () => {
                 </header>
 
                 {/* Main Content */}
-                <main className="flex-grow container mx-auto px-4 pt-32 pb-12">
+                <main className="flex-grow container mx-auto px-4 pt-64 pb-12">
                     {/* Home Section */}
                     {activeSection === 'home' && (
                         <section className="mb-12">
@@ -784,7 +784,7 @@ const TahaPortfolio = () => {
                                 
                             </div>
                             <div className="space-y-6 mt-12 flex flex-col justify-center items-center">
-  <div className="relative w-[50%]  h-0 pb-[56.25%] overflow-hidden">
+  <div className="relative w-[50%]  h-[50%] pb-[56.25%] overflow-hidden">
     <video 
       controls
       className="absolute top-0 left-0 w-full h-full"
@@ -794,7 +794,7 @@ const TahaPortfolio = () => {
     </video>
   </div>
   
-  <div className="justify-center items-center w-[50%] h-400 pb-[56.25%] overflow-hidden">
+  <div className="justify-center items-center w-[50%] h-[50%] pb-[56.25%] overflow-hidden">
     <Imagesslider/>
   </div>
 </div>

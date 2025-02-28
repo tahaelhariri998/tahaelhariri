@@ -1,9 +1,7 @@
-/** @type {import('next').NextConfig} */
-const { i18n } = require('./next-i18next.config')
+import type { NextConfig } from "next";
 
-const nextConfig = {
-  reactStrictMode: true,
-  i18n,
-}
+const nextConfig: NextConfig = {
+  /* config options here */
+};
 
-module.exports = nextConfig
+export default nextConfig;
