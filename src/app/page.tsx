@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import Imagesslider from './image';
+
 // Define language context
 interface LanguageContextProps {
     language: string;
