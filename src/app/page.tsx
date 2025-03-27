@@ -738,10 +738,10 @@ const TahaPortfolio = () => {
                        <span className="hidden sm:inline">tahaalhriri@gmail.com</span>
                        <span className="inline sm:hidden">ايميل</span>
                    </a>
-                   <a href="tel:+905349338282" 
+                   <a href="tel:+905349338283" 
                       className="flex items-center text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white py-1 sm:py-2 px-3 sm:px-4 rounded transition-all hover:-translate-y-1">
                        <span className="mr-1 sm:mr-2">📱</span>
-                       <span className="hidden sm:inline">+90 (534) 933 8282</span>
+                       <span className="hidden sm:inline">+90 (534) 933 8283</span>
                        <span className="inline sm:hidden">هاتف</span>
                    </a>
                    <a href="https://www.linkedin.com/in/taha-elhariri-a5b484194/"
@@ -967,7 +967,7 @@ const TahaPortfolio = () => {
                                             </div>
                                             <div>
                                                 <h4 className="font-bold">{t.phone_number}</h4>
-                                                <p>+90 (534) 933 8282</p>
+                                                <p>+90 (534) 933 8283</p>
                                             </div>
                                         </div>
 
